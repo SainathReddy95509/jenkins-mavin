@@ -16,6 +16,11 @@ pipeline {
                 sh "mvn package"
             }
         }
+        stage('Archwing') {
+            steps {
+                archiveArtifacts"**/target/*.jar"
+            }
+        }
     }
 }
 
